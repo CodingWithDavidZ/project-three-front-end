@@ -30,6 +30,7 @@ function CreateNewEmployee() {
         manager_id: data.manager_id,
       }),
     });
+    setChange('');
   }
 
   console.log(
@@ -51,6 +52,7 @@ function CreateNewEmployee() {
               name='first_name'
               placeholder='First Name'
               onChange={handleChange}
+              value={change}
             />
           </span>
           &nbsp; &nbsp;
@@ -63,6 +65,7 @@ function CreateNewEmployee() {
               name='last_name'
               placeholder='Last Name'
               onChange={handleChange}
+              value={change}
             />
           </span>
           <br />

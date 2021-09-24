@@ -33,6 +33,7 @@ function DeleteEmployeeByEmployeeNumber() {
           name='employeeNum'
           placeholder='Enter Employee Number'
           onChange={handleChange}
+          value={change3}
         />
         <button>Submit</button>
       </form>

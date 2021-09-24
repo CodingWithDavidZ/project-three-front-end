@@ -38,6 +38,7 @@ function DeleteEmployeeByID() {
           name='employee'
           placeholder='Enter ID'
           onChange={handleChange}
+          value={change2}
         />
         <button>Submit</button>
       </form>
