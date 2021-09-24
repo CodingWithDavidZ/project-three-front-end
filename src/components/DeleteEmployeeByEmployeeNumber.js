@@ -10,12 +10,15 @@ function DeleteEmployeeByEmployeeNumber() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setDeleteByEmployeeNumber(e.target.employeeNum.value);
+    setDeleteByEmployeeNumber(e.currentTarget.employeeNum.value);
     console.log(
       '🚀 ~ file: DeleteEmployeeByEmployeeNumber.js ~ line 14 ~ DeleteEmployeeByEmployeeNumber ~ deleteByEmployeeNumber',
       deleteByEmployeeNumber
     );
-    fetch(`http://localhost9292/employeeNumber/${deleteByEmployeeNumber}`);
+    fetch(`http://localhost:9292/employeeNumber/${deleteByEmployeeNumber}`, {
+      method: 'DELETE',
+    });
+    setChange3('');
   }
 
   return (
