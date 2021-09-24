@@ -36,3 +36,56 @@
     transform: rotate(360deg);
   }
 }
+
+.navigation {
+  padding: 15px;
+  align-content: center;
+  justify-content: center;
+}
+
+.navLinks {
+  padding-left: 15px;
+}
+
+.employeeList {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  grid-template-rows: repeat(3, auto);
+  grid-gap: 6px;
+  justify-items: center;
+  text-align: center;
+}
+
+.individual-employee-card {
+  background-color: gray;
+  width: 100%;
+}
+
+.managersList {
+  align-content: center;
+  display: grid;
+  grid-template-columns: repeat(1, 30%);
+  grid-template-rows: repeat(4, auto);
+  grid-gap: 6px;
+  justify-items: center;
+  text-align: center;
+}
+
+.individual-manager-card {
+  align-content: center;
+  background-color: rgb(73, 98, 242);
+  width: 100%;
+}
+
+.welcome {
+  text-align: center;
+}
+#greeting {
+  padding-top: 15%;
+  font-size: 36px;
+}
+#EMS {
+  font-size: 60px;
+  font-weight: bold;
+  color: rgb(119, 142, 249);
+}
