@@ -39,8 +39,7 @@
 
 .navigation {
   padding: 15px;
-  align-content: center;
-  justify-content: center;
+  text-align: center;
 }
 
 .navLinks {
@@ -52,40 +51,101 @@
   grid-template-columns: repeat(3, 30%);
   grid-template-rows: repeat(3, auto);
   grid-gap: 6px;
-  justify-items: center;
+  justify-content: center;
   text-align: center;
 }
 
 .individual-employee-card {
   background-color: gray;
   width: 100%;
+  justify-content: center;
+  align-content: center;
 }
 
 .managersList {
   align-content: center;
-  display: grid;
+  max-width: 100%;
+  /* display: grid;
   grid-template-columns: repeat(1, 30%);
   grid-template-rows: repeat(4, auto);
-  grid-gap: 6px;
-  justify-items: center;
+  grid-gap: 6px; */
+  justify-content: center;
   text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: (repeat(4, auto));
+  gap: 6px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    '. Content .'
+    '. . .'
+    '. . .';
+}
+
+.Content {
+  grid-area: Content;
+  background-color: rgb(73, 98, 242);
 }
 
 .individual-manager-card {
   align-content: center;
-  background-color: rgb(73, 98, 242);
-  width: 100%;
+
+  max-width: 33%;
+  text-align: center;
+  justify-content: center;
 }
 
 .welcome {
   text-align: center;
 }
-#greeting {
-  padding-top: 15%;
-  font-size: 36px;
-}
-#EMS {
+
+#YEMS {
+  text-shadow: 0 0 3px hsl(287, 79%, 57%);
   font-size: 60px;
   font-weight: bold;
   color: rgb(119, 142, 249);
+}
+
+.deleteMethod {
+  text-align: center;
+}
+
+.create-or-delete {
+  text-align: center;
+}
+
+.byDB {
+  text-align: center;
+}
+
+.byEmpNum {
+  text-align: center;
+}
+
+.create {
+  text-align: center;
+}
+.form-group {
+  padding: 8px;
+}
+
+.button {
+  font: bold 18px Arial;
+  text-decoration: none;
+  background-color: #eeeeee;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #cccccc;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #cccccc;
+}
+
+#greeting {
+  padding-top: 15%;
+  font-size: 36px;
+  text-shadow: 0 0 5px hsl(0, 0%, 42%);
 }

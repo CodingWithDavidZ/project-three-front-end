@@ -16,16 +16,19 @@ function Managers() {
 
   const managerList = managers.map((manager) => {
     return (
-      <div className='individual-manager-card'>
-        <ul id={manager.id}>
-          <li>
-            Name: {manager.last_name}, {manager.first_name}
-          </li>
-          <li>Employee #: {manager.employee_num}</li>
-          <li>Hire Date: {manager.hire_date},</li>
-          <li>Employees: {manager.employees.length}</li>
-        </ul>
-        <br />
+      <div className='container'>
+        <div className='Content'>
+          <ul id={manager.id}>
+            <li>
+              Name: {manager.last_name}, {manager.first_name}
+            </li>
+            <li>Employee #: {manager.employee_num}</li>
+            <li>Hire Date: {manager.hire_date},</li>
+            <li>Employees: {manager.employees.length}</li>
+            <li>Manager id: {manager.id}</li>
+          </ul>
+          <br />
+        </div>
       </div>
     );
   });

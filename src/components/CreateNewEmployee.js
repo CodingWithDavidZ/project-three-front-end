@@ -51,7 +51,7 @@ function CreateNewEmployee() {
   );
 
   return (
-    <div>
+    <div className='create'>
       <form id='employee-form' autoComplete='off' onSubmit={handleSubmit}>
         <div className='form-group'>
           <h1>Create New Employee</h1>
@@ -66,9 +66,6 @@ function CreateNewEmployee() {
               name='first_name'
               placeholder='First Name'
               onChange={handleChange}
-              // TODO figure out how to clear Fields on submit.
-              // TODO Could do with seperate states but there has to be a better way
-              // value={change}
             />
           </span>
           &nbsp; &nbsp;
@@ -83,7 +80,6 @@ function CreateNewEmployee() {
               name='last_name'
               placeholder='Last Name'
               onChange={handleChange}
-              // value={change}
             />
           </span>
           <br />
@@ -133,6 +129,7 @@ function CreateNewEmployee() {
               onChange={handleChange}
             />
           </span>
+          &nbsp;
           <button className='submit'>Submit</button>
         </div>
       </form>

@@ -21,7 +21,7 @@ function DeleteEmployeeByEmployeeNumber() {
   }
 
   return (
-    <>
+    <div className='byEmpNum'>
       <h1>By Employee Number</h1>
       <form id='delete-by-id' autoComplete='off' onSubmit={handleSubmit}>
         <input
@@ -37,7 +37,7 @@ function DeleteEmployeeByEmployeeNumber() {
         />
         <button>Submit</button>
       </form>
-    </>
+    </div>
   );
 }
 

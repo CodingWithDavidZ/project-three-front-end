@@ -6,9 +6,8 @@ function Main() {
       <h2 className='welcome' id='greeting'>
         Welcome to:
       </h2>
-      <h1 className='welcome' id='EMS'>
-        {' '}
-        Employee Managment Solutions.
+      <h1 className='welcome' id='YEMS'>
+        Your Employee Management Solution.
       </h1>
     </>
   );

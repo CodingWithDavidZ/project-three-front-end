@@ -3,14 +3,22 @@ import { Link } from 'react-router-dom';
 
 function ChooseDelete() {
   return (
-    <div>
-      <h1>DELETE</h1>
+    <div className='deleteMethod'>
+      <h1>Delete Method?</h1>
       <span>
-        <Link className='link' to='/byId'>
+        <Link
+          className='button
+        '
+          to='/byId'
+        >
           By Database Id
         </Link>
         &nbsp; &nbsp;
-        <Link className='link' to='/byEmployeeNumber'>
+        <Link
+          className='button
+        '
+          to='/byEmployeeNumber'
+        >
           By Employee Number
         </Link>
       </span>

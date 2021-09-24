@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 
 function CreateOrDelete() {
   return (
-    <>
+    <div className='create-or-delete'>
       <h1>What action would you like to complete?</h1>
       <span>
-        <Link className='link' to='/createEmployee'>
+        <Link className='button' to='/createEmployee'>
           Create Employee
         </Link>
         &nbsp; &nbsp;
-        <Link className='link' to='/chooseDelete'>
+        <Link className='button' to='/chooseDelete'>
           Delete Employee
         </Link>
       </span>
-    </>
+    </div>
   );
 }
 
