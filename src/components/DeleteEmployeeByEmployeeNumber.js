@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 
 function DeleteEmployeeByEmployeeNumber() {
   const [deleteByEmployeeNumber, setDeleteByEmployeeNumber] = useState('');
-  const [change3, setChange3] = useState('');
 
   const handleChange = (e) => {
-    setChange3(e.target.value);
+    setDeleteByEmployeeNumber(e.target.value);
   };
 
   function handleSubmit(e) {
@@ -18,7 +17,7 @@ function DeleteEmployeeByEmployeeNumber() {
     fetch(`http://localhost:9292/employeeNumber/${deleteByEmployeeNumber}`, {
       method: 'DELETE',
     });
-    setChange3('');
+    setDeleteByEmployeeNumber('');
   }
 
   return (
@@ -26,6 +25,7 @@ function DeleteEmployeeByEmployeeNumber() {
       <h1>By Employee Number</h1>
       <form id='delete-by-id' autoComplete='off' onSubmit={handleSubmit}>
         <input
+          required
           type='integer'
           minlength='8'
           maxLength='8'
@@ -33,7 +33,7 @@ function DeleteEmployeeByEmployeeNumber() {
           name='employeeNum'
           placeholder='Enter Employee Number'
           onChange={handleChange}
-          value={change3}
+          value={deleteByEmployeeNumber}
         />
         <button>Submit</button>
       </form>

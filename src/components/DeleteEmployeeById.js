@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 function DeleteEmployeeByID() {
-  const [change2, setChange2] = useState('');
   const [employeeId, setEmployeeId] = useState('');
 
   function handleSubmit(e) {
@@ -14,7 +13,7 @@ function DeleteEmployeeByID() {
     fetch(`http://localhost:9292/employees/${employeeId}`, {
       method: 'DELETE',
     });
-    setChange2('');
+    setEmployeeId('');
     console.log(
       '🚀 ~ file: DeleteEmployeeByID.js ~ line 19 ~ DeleteEmployeeByID ~ employeeId after fetch',
       employeeId
@@ -22,7 +21,7 @@ function DeleteEmployeeByID() {
   }
 
   const handleChange = (e) => {
-    setChange2(e.target.value);
+    setEmployeeId(e.target.value);
   };
 
   return (
@@ -30,6 +29,7 @@ function DeleteEmployeeByID() {
       <h1>By Database Id</h1>
       <form id='delete-by-id' autoComplete='off' onSubmit={handleSubmit}>
         <input
+          required
           type='integer'
           min='1'
           max='999'
@@ -38,7 +38,7 @@ function DeleteEmployeeByID() {
           name='employee'
           placeholder='Enter ID'
           onChange={handleChange}
-          value={change2}
+          value={employeeId}
         />
         <button>Submit</button>
       </form>

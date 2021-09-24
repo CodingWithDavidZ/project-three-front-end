@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 
 function CreateNewEmployee() {
-  const [change, setChange] = useState('');
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({
+    first_name: '',
+    last_name: '',
+    hire_date: '',
+    employee_num: '',
+    manager_id: '',
+  });
 
   const handleChange = (e) => {
-    setChange(e.target.value);
+    let attr = e.target.name;
+    setData({ ...data, [attr]: e.target.value });
   };
 
   function handleSubmit(e) {
     e.preventDefault();
-    setData({
-      first_name: e.currentTarget.first_name.value,
-      last_name: e.currentTarget.last_name.value,
-      hire_date: e.currentTarget.hire_date.value,
-      employee_num: e.currentTarget.employee_num.value,
-      manager_id: e.currentTarget.manager_id.value,
-    });
     fetch('http://localhost:9292/employees', {
       method: 'POST',
       headers: {
@@ -29,8 +28,21 @@ function CreateNewEmployee() {
         employee_num: data.employee_num,
         manager_id: data.manager_id,
       }),
+    }).then(() => {
+      setData({
+        first_name: '',
+        last_name: '',
+        hire_date: '',
+        employee_num: '',
+        manager_id: '',
+      });
     });
-    setChange('');
+    // e = () => {
+    //   Array.from(document.querySelectorAll('input')).forEach(
+    //     (input) => (input.value = '')
+    //   );
+    // };
+    // e();
   }
 
   console.log(
@@ -46,32 +58,40 @@ function CreateNewEmployee() {
           <span>
             First Name: &nbsp;
             <input
+              required
+              value={data.first_name}
               type='text'
               className='form-control'
               id='first_name'
               name='first_name'
               placeholder='First Name'
               onChange={handleChange}
-              value={change}
+              // TODO figure out how to clear Fields on submit.
+              // TODO Could do with seperate states but there has to be a better way
+              // value={change}
             />
           </span>
           &nbsp; &nbsp;
           <span>
             Last Name: &nbsp;
             <input
+              required
+              value={data.last_name}
               type='text'
               className='form-control'
               id='last_name'
               name='last_name'
               placeholder='Last Name'
               onChange={handleChange}
-              value={change}
+              // value={change}
             />
           </span>
           <br />
           <span>
             Hire Date: &nbsp;
             <input
+              required
+              value={data.hire_date}
               type='date'
               className='form-control'
               id='hire_date'
@@ -84,6 +104,8 @@ function CreateNewEmployee() {
           <span>
             Manager: &nbsp;
             <input
+              required
+              value={data.manager_id}
               type='number'
               min='1'
               max='4'
@@ -99,6 +121,8 @@ function CreateNewEmployee() {
           <span>
             Employee #: &nbsp;
             <input
+              required
+              value={data.employee_num}
               type='integer'
               minlength='8'
               maxlength='8'
