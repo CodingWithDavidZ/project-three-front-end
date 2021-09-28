@@ -37,12 +37,6 @@ function CreateNewEmployee() {
         manager_id: '',
       });
     });
-    // e = () => {
-    //   Array.from(document.querySelectorAll('input')).forEach(
-    //     (input) => (input.value = '')
-    //   );
-    // };
-    // e();
   }
 
   console.log(

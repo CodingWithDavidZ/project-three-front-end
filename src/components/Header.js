@@ -16,7 +16,7 @@ function Header() {
       <Link
         className='navLinks'
         id='employeeManagmentLink'
-        to='/employeeManagment'
+        to='/employeeManagement'
       >
         Employee Managment
       </Link>

@@ -27,7 +27,7 @@ function App() {
       <Route exact path='/managers'>
         <Managers />
       </Route>
-      <Route exact path='/employeeManagment'>
+      <Route exact path='/employeeManagement'>
         <CreateOrDelete />
       </Route>
       <Route exact path='/createEmployee'>
@@ -45,13 +45,5 @@ function App() {
     </Router>
   );
 }
-
-// {
-//   createNew ? (
-//     <EmployeeManagment />
-//   ) : (
-//     <ChooseDelete deleteById={deleteByID} setDeleteByID={setDeleteByID} />
-//   );
-// }
 
 export default App;
